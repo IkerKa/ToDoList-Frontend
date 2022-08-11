@@ -1,0 +1,51 @@
+.task-container {
+  display: flex;
+  width: 100%;
+  background: #d0d0d0;
+  justify-content: space-between;
+  border: 2px solid #1C6EA4;
+  border-radius: 2em;
+  position: relative;
+  align-items: center;
+  padding: 0.5em;
+}
+
+
+.emoji-box {
+  position: absolute;
+  font-size: 1.8em;
+  justify-content: center;
+  background: white;
+  border: 2px solid #1C6EA4;
+  border-radius: 100px;
+  top: -0.75em;
+  left: -0.75em;
+}
+    
+.check-box {
+  font-size: 1.5em;
+  width: 2em;
+  height: 2em;
+  border-radius: 100px;
+  justify-content: center;
+  background: white;
+  border: 2px solid #1C6EA4;
+}
+
+.text-container {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.98em;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  word-break: break-all;
+  padding: 0 0.5em;
+}
+
+.text-box {
+
+}
+
+.success {
+  background: #ccffd4;
+}

@@ -1,0 +1,79 @@
+.register-page-container {
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E3E3E3;
+}
+
+.register-form-container {
+  background-color: white;
+  box-shadow: 4px 4px 32px 2px rgba(0,0,0,0.12);
+  border-radius: 10px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column
+}
+
+.register-title {
+  text-shadow: 1px 2px 2px #ff0000A0;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+}
+
+.register-field-list {
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+}
+
+.register-field > input {
+  background: #E3E3E3;
+  border-radius: 100px;
+  padding: 0.5em;
+}
+
+.register-submit-btn {
+  background: red;
+  color: white;
+  padding: 0.5em;
+  font-weight: bold;
+  border-radius: 100px;
+}
+
+.register-submit-btn:hover {
+  transition: background 0.2s;
+  /*background-image: url("../../public/LITORAL.gif");*/
+  background: lightcoral;
+}
+
+.back-to-login{
+  border-radius: 100px;
+  padding: 0.5em;
+  font-weight: bold;
+  background-color: aqua;
+  /*centrar la letra*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.back-to-login:hover{
+  transition: background 0.5s;
+  background: lightgreen;
+}

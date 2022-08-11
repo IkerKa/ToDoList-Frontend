@@ -1,0 +1,7 @@
+.lp-container {
+  min-height: calc(100vh - 20em);
+  padding: 10em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
