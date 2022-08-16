@@ -6,7 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-router-dom';
 
-import './RegisterPage.css'
+import './RegisterPage.css';
+
+import { register } from '../Services/userService';
 
 function RegisterPage() {
 
@@ -55,9 +57,19 @@ function RegisterPage() {
     if ( password !== confirm ) {
       toast.error("Passwords don't match")
     } else {
-      toast.success("OK")
-
-      navigate("/", { replace : true })
+        register(newUsername,password).then(
+          response=>
+            {
+              toast.success("OK");
+              navigate("/", { replace : true })
+            }
+        )
+        .catch(
+          e=>
+          {
+            toast.error("Error");
+          }
+        )
     }
   }
 
