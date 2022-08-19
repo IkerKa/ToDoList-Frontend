@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 
+import  bcrypt from 'bcryptjs';
+
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom' 
 
 import './LoginPage.css'
+
+import { login } from '../Services/userService'
 
 function LoginPage() {
 
@@ -25,17 +29,19 @@ function LoginPage() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    var body = {
-      username: username,
-      password: password
-    }
-
-    //console.log(body)
-
-    toast.success("Logged in successfully")
-
-    navigate("/", { replace : true })
+    var hash = bcrypt.hashSync(password, 10);
+    login(username, hash)
+    .then(response => {
+      if ( response.ok ) {
+        toast.success(response.msg)
+        navigate("/", { replace : true })
+      } else {
+        toast.error(response.msg)
+      }
+    })
+    .catch(e => {
+      toast.error(e.message)
+    })
   }
 
   return (

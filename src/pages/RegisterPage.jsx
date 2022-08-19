@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import bcrypt from 'bcryptjs'
+
 import { toast } from 'react-hot-toast';
 
 import { useNavigate } from 'react-router-dom';
@@ -37,11 +39,7 @@ function RegisterPage() {
   function handleRegister(e) {
     e.preventDefault();
 
-    var body =
-    {
-      username: newUsername,
-      password: password
-    }
+    var hash = bcrypt.hashSync(password, 10);
 
     /*
     toast.promise(
@@ -57,15 +55,15 @@ function RegisterPage() {
     if ( password !== confirm ) {
       toast.error("Passwords don't match")
     } else {
-        register(newUsername,password).then(
-          response=>
+        register(newUsername,hash).then(
+          response =>
             {
               toast.success("OK");
               navigate("/", { replace : true })
             }
         )
         .catch(
-          e=>
+          e =>
           {
             toast.error("Error");
           }
